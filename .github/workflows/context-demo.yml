@@ -1,19 +1,14 @@
 name: Context Demonstration
-
 on: [push]
-
 jobs:
   show-context:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-      
       - name: Print GitHub Context
         run: echo "GitHub Context: ${{ toJson(github) }}"
-
       - name: Print Environment Variables
         run: echo "Environment Variables: ${{ toJson(env) }}"
-
       - name: Print Runner Context
         run: echo "Runner Context: ${{ toJson(runner) }}"
